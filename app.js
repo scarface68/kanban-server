@@ -2,7 +2,12 @@ require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
 const helmet = require("helmet");
+const cors = require("cors"); // Import cors package
 const app = express();
+
+app.use(cors({
+  origin: ['https://kanban-kraftbase.vercel.app/', 'http://localhost:3000']
+}));
 
 const boardRoutes = require("./routes/board");
 const listRoutes = require("./routes/list");
