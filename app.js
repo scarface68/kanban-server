@@ -25,7 +25,11 @@ app.use(sendErrorResponse);
 
 mongoose
   .connect(
-    `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.oysbklc.mongodb.net/${process.env.MONGO_DEFAULT_DB}?retryWrites=true&w=majority`
+    `mongodb+srv://saichandan68:TFbfgs6g895vI7yR@cluster0.3hvf76s.mongodb.net/`
   )
-  .then(() => app.listen(process.env.PORT || 8080))
+  .then(() =>
+    app.listen(process.env.PORT || 5000, () => {
+      console.log("Server started on port 5000");
+    })
+  )
   .catch((err) => console.log(err));

@@ -1,4 +1,5 @@
 const Board = require("../models/board");
+const List = require("../models/list");
 const mongoose = require("mongoose");
 const { throwError } = require("../utils/helpers");
 
@@ -24,6 +25,12 @@ exports.createNewBoard = async (req, res, next) => {
 
     const board = new Board({ title, createdBy: userId });
     const result = await board.save();
+    const list1 = new List({ title: "To Do", boardId: result._id });
+    const list2 = new List({ title: "In Progress", boardId: result._id });
+    const list3 = new List({ title: "Done", boardId: result._id });
+    list1.save()
+    list2.save()
+    list3.save()
     res.status(200).json({
       message: "Board created succesfully",
       data: { id: result._id.toString(), title: result.title },

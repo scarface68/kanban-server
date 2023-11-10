@@ -7,13 +7,18 @@ exports.createNewCard = async (req, res, next) => {
   const title = req.body.title;
   const description = req.body.description;
   const checkList = req.body.checkList;
-
+  const priority = req.body.priority;
+  const due = req.body.due;
+  const labels = req.body.labels;
   const card = new Card({
     title,
     description,
     checkList,
     boardId,
     listId,
+    priority,
+    due,
+    labels,
   });
 
   try {
@@ -32,6 +37,9 @@ exports.updateCard = async (req, res, next) => {
   const title = req.body.title;
   const description = req.body.description;
   const checkList = req.body.checkList;
+  const priority = req.body.priority;
+  const due = req.body.due;
+  const labels = req.body.labels;
 
   try {
     const card = await Card.findById(cardId);
@@ -39,6 +47,9 @@ exports.updateCard = async (req, res, next) => {
     card.description = description;
     card.checkList = checkList;
     card.listId = listId;
+    card.priority = priority;
+    card.due = due;
+    card.labels = labels;
 
     const result = await card.save();
     res
