@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
 const helmet = require("helmet");
@@ -25,7 +26,7 @@ app.use(sendErrorResponse);
 
 mongoose
   .connect(
-    `mongodb+srv://saichandan68:TFbfgs6g895vI7yR@cluster0.3hvf76s.mongodb.net/`
+    `${process.env.MONGODB_URI}`,
   )
   .then(() =>
     app.listen(process.env.PORT || 5000, () => {
