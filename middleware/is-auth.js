@@ -1,4 +1,8 @@
 const jwt = require("jsonwebtoken");
+/**
+ * Middleware function to check if user is authenticated.
+ * @module is-auth
+ */
 const { throwError } = require("../utils/helpers");
 
 module.exports = (req, res, next) => {

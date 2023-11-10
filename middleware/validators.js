@@ -1,3 +1,7 @@
+/**
+ * Middleware for validating incoming requests using express-validator.
+ * @module validators
+ */
 const { body } = require("express-validator");
 const User = require("../models/user");
 
