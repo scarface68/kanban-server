@@ -7,7 +7,7 @@ This repo contains only the server side code. You can see the frontend repo [her
 ### 🚀 Features
 - CRUD functionality for user boards, lists, cards.
 - JWT Authentication.
-- User Signup/Login.
+- User Signup/Login and Logout.
 - Server side validation od requests.
 - Pasword salting.
 - MongoDb for storing data
