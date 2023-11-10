@@ -2,7 +2,7 @@
 
 ### Backend RestFul Api for my Kanban board MERN stack app. Built with NodeJs and ExpressJs.
 
-This repo contains only the server side code. You can see the frontend repo [here.](https://github.com/destructo570/kanban-board-mern-stack)
+This repo contains only the server side code. You can see the frontend repo [here.](https://github.com/scarface68/kanban-client)
 
 ### 🚀 Features
 - CRUD functionality for user boards, lists, cards.
