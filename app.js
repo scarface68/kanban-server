@@ -29,6 +29,10 @@ app.use("/card", cardRoutes);
 
 app.use(sendErrorResponse);
 
+app.get('/', (req, res) => {
+  res.send('welcome to my api');
+})
+
 mongoose
   .connect(
     `${process.env.MONGODB_URI}`,
